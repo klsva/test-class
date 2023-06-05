@@ -29,12 +29,12 @@ $ cd test-class
 
 В папке создать .env файл
 В файле прописать переменные порт для запуска приложения и подключение к базе данных
-PORT=5000
-DB_HOST
-DB_USER
-DB_NAME
-DB_PASSWORD
-DB_PORT
+PORT=5000 <br>
+DB_HOST <br>
+DB_USER <br>
+DB_NAME <br>
+DB_PASSWORD <br>
+DB_PORT <br>
 
 ```
 $ npm install
@@ -43,8 +43,8 @@ $ npm run dev
 Приложение запустится на указанном порту http://localhost:5000
 
 ### Scripts
-npm run dev - запуск приложения в режиме dev
-npm run test - запуск тестов
+npm run dev - запуск приложения в режиме dev <br>
+npm run test - запуск тестов <br>
 
 ### Deploy link
 
