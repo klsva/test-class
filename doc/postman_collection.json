@@ -23,16 +23,18 @@
 							"});\r",
 							"const jsonData = pm.response.json();\r",
 							"pm.test(\"Test data type of the response\", () => {\r",
+							"    if (jsonData.length !== null){\r",
 							"    jsonData.forEach(obj => {\r",
 							"        pm.expect(obj).to.be.an(\"object\");\r",
 							"        pm.expect(obj.id).to.be.a(\"number\");\r",
 							"        pm.expect(obj.date).to.include(moment(obj.date).format('YYYY-MM-DD'));\r",
 							"        pm.expect(obj.title).to.be.a(\"string\");\r",
 							"        pm.expect(obj.status).to.be.a(\"number\");\r",
-							"        pm.expect(obj.visitcount).to.be.a(\"number\");\r",
+							"        pm.expect(obj.visitCount).to.be.a(\"number\");\r",
 							"        pm.expect(obj.students).to.be.an(\"array\");\r",
 							"        pm.expect(obj.teachers).to.be.an(\"array\");    \r",
 							"    })\r",
+							"  },\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -104,7 +106,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"teachersIds\": [1, 2],\r\n    \"title\": \"title\",\r\n    \"days\": [4],\r\n    \"firstDate\": \"2023-06-08\",\r\n    \"lessonsCount\": \"3\",\r\n    \"lastDate\": \"2023-09-09\"\r\n}",
+					"raw": "{\r\n    \"teacherIds\": [1, 2],\r\n    \"title\": \"title\",\r\n    \"days\": [4],\r\n    \"firstDate\": \"2023-06-08\",\r\n    \"lessonsCount\": \"3\",\r\n    \"lastDate\": \"2023-09-09\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

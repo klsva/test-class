@@ -12,7 +12,7 @@ function addDateConditions(params) {
   }
   if (params.date.length === 1) {
     return `
-      and date = ${params.date[0]}
+      and date = '${params.date[0]}'
     `;
   }
   if (params.date.length === 2) {

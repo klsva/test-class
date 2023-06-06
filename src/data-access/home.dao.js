@@ -8,9 +8,10 @@ export async function findDefaultSearch(payload) {
   return result.rows;
 }
 
-// Gets lessons's list date, status, teachersIds, studentsCounr, page, perPage
+// Gets lessons's list date, status, teacherIds, studentsCounr, page, perPage
 export async function findByFilters(payload) {
   const result = await db.query(home.findByFilters(payload));
-  if (!result || !result.rows || !result.rows.length) return null;
+  if (!result || !result.rows) return null;
+  if (!result.rows.length) return [];
   return result.rows;
 }

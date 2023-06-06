@@ -7,8 +7,17 @@ export const createDateArr = async (date, days, count = 0, lastDate = '') => {
   const maxCount = 300;
   let checkDate = null;
   if (days.includes(moment(date).day())) {
-    if (count > maxCount) {
+    //check stopper
+    if (count === null && lastDate === null) {
+      return 'Insert count or lastDate';
+    }
+    //check count
+    if (count === null || count > maxCount) {
       count = maxCount;
+    }
+    //check lastDate
+    if (lastDate === null || moment(lastDate) > moment(date).add(1, 'years')) {
+      lastDate = moment(date).add(1, 'years');
     }
     let maxDate = moment(date).add(1, 'years');
     if (maxDate > moment(lastDate)) {

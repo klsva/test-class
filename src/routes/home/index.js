@@ -11,14 +11,14 @@ router.get(
     const payload = {
       date: query.date ? query.date.split(',') : null,
       status: query.status ? query.status : null,
-      teacherIds: query.teacherIds ? query.teacherIds : null,
+      teacherIds: query.teacherIds ? query.teacherIds.split(',') : null,
       studentsCount: query.studentsCount
         ? query.studentsCount.split(',')
         : null,
       page: query.page ? query.page : 1,
       lessonsPerPage: query.lessonsPerPage ? query.lessonsPerPage : 5,
     };
-    const { error } = await searchLessonsValidator(payload);
+    const { value, error } = await searchLessonsValidator(payload);
     if (error) {
       next(error);
     } else {

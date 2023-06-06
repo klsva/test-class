@@ -1,7 +1,7 @@
 import Joi from 'joi';
 
 export const lessonCreateValidator = async (data) => {
-  const teachersIds = Joi.array().items(Joi.number());
+  const teacherIds = Joi.array().items(Joi.number());
   const title = Joi.string();
   const days = Joi.array().items(Joi.number().min(0).max(6));
   const firstDate = Joi.date()
@@ -11,8 +11,9 @@ export const lessonCreateValidator = async (data) => {
   const lastDate = Joi.date()
     .greater('now')
     .message('"date" cannot be earlier than today');
+
   const schema = Joi.object({
-    teachersIds: teachersIds.required(),
+    teacherIds: teacherIds.required(),
     title: title.required(),
     days: days.required(),
     firstDate: firstDate.required(),

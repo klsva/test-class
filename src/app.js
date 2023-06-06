@@ -12,7 +12,7 @@ app.use(function (req, res, next) {
 });
 app.use(express.json());
 //routes
-app.use('/api', apiRouter);
+app.use('/', apiRouter);
 app.use(errorHandler);
 
 //server

@@ -39,7 +39,7 @@ describe('Test /lessons endpoint', () => {
 
   it('Test for method POST. It Should return list of new lessons ids', async () => {
     const data = {
-      teachersIds: teacherIds,
+      teacherIds: teacherIds,
       title: testName,
       days: [2, 6],
       firstDate: '2023-08-05',

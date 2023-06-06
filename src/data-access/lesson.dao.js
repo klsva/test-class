@@ -18,7 +18,7 @@ export async function create(payload) {
       throw new Error(datesArr);
     }
     //split teachers IDs
-    for await (let teacherId of payload.teachersIds) {
+    for await (let teacherId of payload.teacherIds) {
       //create lesson by date
       for await (let date of datesArr) {
         const paramsLesson = [date, payload.title];

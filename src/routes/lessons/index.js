@@ -9,7 +9,7 @@ router.post(
   lessonCreateMw,
   asyncHandler(async (req, res, next) => {
     const payload = {
-      teachersIds: req.body.teachersIds,
+      teacherIds: req.body.teacherIds,
       title: req.body.title,
       days: req.body.days,
       firstDate: req.body.firstDate,
